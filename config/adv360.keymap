@@ -10,39 +10,6 @@
         #include "macros.dtsi"
       #include "version.dtsi"
 
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <175>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        TD_backspace: TD_backspace {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_BACKSPACE";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp LC(BACKSPACE)>;
-        };
-
-        highlight_word_left: highlight_word_left {
-            compatible = "zmk,behavior-caps-word";
-            label = "HIGHLIGHT_WORD_LEFT";
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LSFT)>;
-            continue-list = <LEFT_ARROW>;
-        };
-
-        highlight_word_right: highlight_word_right {
-            compatible = "zmk,behavior-caps-word";
-            label = "HIGHLIGHT_WORD_RIGHT";
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LSFT)>;
-            continue-list = <RIGHT_ARROW>;
-        };
-
         backspace_td: backspace_td {
             compatible = "zmk,behavior-tap-dance";
             label = "BACKSPACE_TD";
@@ -67,69 +34,69 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp ESC         &kp N1                &kp N2  &kp N3        &kp N4  &kp N5  &tog 1                                                                                                                    &mo 3                     &kp N6   &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp GRAVE       &kp Q                 &kp W   &kp E         &kp R   &kp T   &kp KP_LEFT_PARENTHESIS                                                                                                   &kp KP_RIGHT_PARENTHESIS  &kp Y    &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&kp TAB         &kp A                 &kp S   &kp D         &kp F   &kp G   &kp LEFT_BRACKET         &kp LS(LG(LEFT_ARROW))  &kp RS(RG(RIGHT_ARROW))      &kp PLUS       &kp EQUAL                    &kp RIGHT_BRACKET         &kp H    &kp J   &kp K      &kp L     &kp SEMI  &kp SINGLE_QUOTE
-&kp LEFT_SHIFT  &kp Z                 &kp X   &kp C         &kp V   &kp B                                                    &kp LC(S)                    &kp MINUS                                                             &mt N N  &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&kp LCTRL       &kp LS(LEFT_CONTROL)  &mo 1   &kp LS(LGUI)  &mo 2           &kp LEFT_GUI             &kp ENTER               &none                        &kp RIGHT_ALT  &mt RC(BACKSPACE) BACKSPACE  &kp SPACE                          &mo 4   &none      &kp LBKT  &kp RBKT  &mo 2
+&kp ESC         &kp N1                &kp N2  &kp N3        &kp N4  &kp N5  &tog 1                                                                                                      &mo 3                     &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp GRAVE       &kp Q                 &kp W   &kp E         &kp R   &kp T   &kp KP_LEFT_PARENTHESIS                                                                                     &kp KP_RIGHT_PARENTHESIS  &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
+&kp TAB         &kp A                 &kp S   &kp D         &kp F   &kp G   &kp LEFT_BRACKET         &kp LS(LG(LEFT_ARROW))  &kp RS(RG(RIGHT_ARROW))      &kp PLUS       &kp EQUAL      &kp RIGHT_BRACKET         &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SINGLE_QUOTE
+&kp LEFT_SHIFT  &kp Z                 &kp X   &kp C         &kp V   &kp B                                                    &kp LC(S)                    &kp MINUS                                               &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+&kp LCTRL       &kp LS(LEFT_CONTROL)  &mo 1   &kp LS(LGUI)  &mo 2           &kp LEFT_GUI             &kp ENTER               &none                        &kp RIGHT_ALT  &backspace_td  &kp SPACE                         &mo 4   &none      &kp LBKT  &kp RBKT  &mo 2
             >;
         };
 
         keypad {
             display-name = "Kp";
             bindings = <
-&none  &none  &none  &none  &none  &none  &trans                                             &kp KP_NUMLOCK  &none  &none       &none      &none      &none        &kp MINUS
-&none  &none  &none  &none  &none  &none  &none                                              &kp ASTERISK    &none  &kp KP_N7   &kp KP_N8  &kp KP_N9  &none        &none
-&none  &none  &none  &none  &none  &none  &none      &none  &none      &none  &kp EQUAL      &kp SLASH       &none  &kp KP_N4   &kp KP_N5  &kp KP_N6  &kp KP_PLUS  &kp EQUAL
-&none  &none  &none  &none  &none  &none                    &none      &none                                 &none  &kp KP_N1   &kp KP_N2  &kp KP_N3  &kp MINUS    &none
-&none  &none  &none  &none  &none         &kp ENTER  &none  &none      &none  &kp BACKSPACE  &kp KP_N0              &kp KP_DOT  &none      &none      &none        &none
+&none  &none  &none  &none  &none  &none  &trans                                             &kp KP_NUMLOCK  &none   &none       &none      &none      &none        &kp MINUS
+&none  &none  &none  &none  &none  &none  &none                                              &kp ASTERISK    &none   &kp KP_N7   &kp KP_N8  &kp KP_N9  &none        &none
+&none  &none  &none  &none  &none  &none  &none      &none  &none      &none  &kp EQUAL      &kp SLASH       &none   &kp KP_N4   &kp KP_N5  &kp KP_N6  &kp KP_PLUS  &kp EQUAL
+&none  &none  &none  &none  &none  &none                    &none      &none                                 &trans  &kp KP_N1   &kp KP_N2  &kp KP_N3  &kp MINUS    &none
+&none  &none  &none  &none  &none         &kp ENTER  &none  &none      &none  &kp BACKSPACE  &kp KP_N0               &kp KP_DOT  &none      &none      &none        &none
             >;
         };
 
         fn {
             display-name = "Fn";
             bindings = <
-&kp F1           &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &tog 1                                      &mo 3   &kp F7                &kp F8                 &kp F9        &kp F10          &kp F11  &kp F12
-&none            &none   &trans  &trans  &trans  &trans  &none                                       &none   &trans                &trans                 &trans        &trans           &trans   &kp C_VOLUME_UP
-&kp PRINTSCREEN  &trans  &trans  &trans  &trans  &trans  &none   &trans  &trans      &trans  &trans  &none   &kp LEFT_ARROW        &kp DOWN_ARROW         &kp UP_ARROW  &kp RIGHT_ARROW  &none    &kp C_VOLUME_DOWN
-&trans           &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &highlight_word_left  &highlight_word_right  &trans        &trans           &none    &trans
-&trans           &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans                        &trans                 &trans        &trans           &trans   &trans
+&kp F1           &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &tog 1                                      &mo 3   &kp F7          &kp F8          &kp F9        &kp F10          &kp F11  &kp F12
+&none            &none   &trans  &trans  &trans  &trans  &none                                       &none   &trans          &trans          &trans        &trans           &trans   &kp C_VOLUME_UP
+&kp PRINTSCREEN  &trans  &trans  &trans  &trans  &trans  &none   &trans  &trans      &trans  &trans  &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none    &kp C_VOLUME_DOWN
+&trans           &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans          &none           &trans        &trans           &none    &trans
+&trans           &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans                  &trans          &trans        &trans           &trans   &trans
             >;
         };
 
         mod {
             display-name = "Mod";
             bindings = <
-&none           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                  &trans           &none  &none       &none       &none  &none  &none
-&none           &none         &none         &none         &none         &none         &bootloader                                            &bootloader      &none  &none       &none       &none  &none  &none
-&studio_unlock  &none         &none         &none         &none         &none         &none        &none  &none      &bt BT_CLR  &none       &stp STP_BAT     &none  &none       &none       &none  &none  &none
-&none           &none         &none         &none         &macro_ver    &none                             &none      &none                                    &none  &none       &none       &none  &none  &none
-&none           &none         &none         &none         &none                       &none        &none  &none      &none       &bl BL_TOG  &rgb_ug RGB_TOG         &bl BL_INC  &bl BL_DEC  &none  &none  &none
+&none           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                  &trans           &none   &none       &none       &none  &none  &none
+&none           &none         &none         &none         &none         &none         &bootloader                                            &bootloader      &none   &none       &none       &none  &none  &none
+&studio_unlock  &none         &none         &none         &none         &none         &none        &none  &none      &bt BT_CLR  &none       &stp STP_BAT     &none   &none       &none       &none  &none  &none
+&none           &none         &none         &none         &macro_ver    &none                             &none      &none                                    &trans  &none       &none       &none  &none  &none
+&none           &none         &none         &none         &none                       &none        &none  &none      &none       &bl BL_TOG  &rgb_ug RGB_TOG          &bl BL_INC  &bl BL_DEC  &none  &none  &none
             >;
         };
 
-        Red {
+        red {
             display-name = "Red";
             bindings = <
-&none   &none   &none   &none   &none   &none   &none                                       &none   &none                 &none                  &none   &none   &none      &none
-&none   &none   &trans  &trans  &trans  &trans  &none                                       &none   &trans                &trans                 &trans  &trans  &trans     &none
-&none   &trans  &trans  &trans  &trans  &trans  &none   &trans  &trans      &trans  &trans  &none   &none                 &none                  &none   &none   &kp PLUS   &kp EQUAL
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &highlight_word_left  &highlight_word_right  &trans  &trans  &kp MINUS  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans                        &trans                 &trans  &trans  &trans     &trans
+&none   &none   &none   &none   &none   &none   &none                                       &none   &none   &none   &none   &none   &none      &none
+&none   &none   &trans  &trans  &trans  &trans  &none                                       &none   &trans  &trans  &trans  &trans  &trans     &none
+&none   &trans  &trans  &trans  &trans  &trans  &none   &trans  &trans      &trans  &trans  &none   &none   &none   &none   &none   &kp PLUS   &kp EQUAL
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &kp MINUS  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans     &trans
             >;
         };
 
-        extra2 {
+        extra1 {
             display-name = "Purple";
             status = "reserved";
         };
 
-        extra3 {
+        extra2 {
             display-name = "Cyan";
             status = "reserved";
         };
 
-        extra4 {
+        extra3 {
             display-name = "Yellow";
             status = "reserved";
         };
