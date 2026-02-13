@@ -67,11 +67,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp ESC         &kp N1                &kp N2  &kp N3        &kp N4  &kp N5  &tog 1                                                                                                      &mo 3                     &kp N6   &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp GRAVE       &kp Q                 &kp W   &kp E         &kp R   &kp T   &kp KP_LEFT_PARENTHESIS                                                                                     &kp KP_RIGHT_PARENTHESIS  &kp Y    &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&kp TAB         &kp A                 &kp S   &kp D         &kp F   &kp G   &kp LEFT_BRACKET         &kp LS(LG(LEFT_ARROW))  &kp RS(RG(RIGHT_ARROW))      &kp PLUS       &kp EQUAL      &kp RIGHT_BRACKET         &kp H    &kp J   &kp K      &kp L     &kp SEMI  &kp SINGLE_QUOTE
-&kp LEFT_SHIFT  &kp Z                 &kp X   &kp C         &kp V   &kp B                                                    &kp LC(S)                    &kp MINUS                                               &mt N N  &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&kp LCTRL       &kp LS(LEFT_CONTROL)  &mo 1   &kp LS(LGUI)  &mo 2           &kp LEFT_GUI             &kp ENTER               &none                        &kp RIGHT_ALT  &backspace_td  &kp SPACE                          &mo 4   &none      &kp LBKT  &kp RBKT  &mo 2
+&kp ESC         &kp N1                &kp N2  &kp N3        &kp N4  &kp N5  &tog 1                                                                                                                    &mo 3                     &kp N6   &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp GRAVE       &kp Q                 &kp W   &kp E         &kp R   &kp T   &kp KP_LEFT_PARENTHESIS                                                                                                   &kp KP_RIGHT_PARENTHESIS  &kp Y    &kp U   &kp I      &kp O     &kp P     &kp BSLH
+&kp TAB         &kp A                 &kp S   &kp D         &kp F   &kp G   &kp LEFT_BRACKET         &kp LS(LG(LEFT_ARROW))  &kp RS(RG(RIGHT_ARROW))      &kp PLUS       &kp EQUAL                    &kp RIGHT_BRACKET         &kp H    &kp J   &kp K      &kp L     &kp SEMI  &kp SINGLE_QUOTE
+&kp LEFT_SHIFT  &kp Z                 &kp X   &kp C         &kp V   &kp B                                                    &kp LC(S)                    &kp MINUS                                                             &mt N N  &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+&kp LCTRL       &kp LS(LEFT_CONTROL)  &mo 1   &kp LS(LGUI)  &mo 2           &kp LEFT_GUI             &kp ENTER               &none                        &kp RIGHT_ALT  &mt RC(BACKSPACE) BACKSPACE  &kp SPACE                          &mo 4   &none      &kp LBKT  &kp RBKT  &mo 2
             >;
         };
 
